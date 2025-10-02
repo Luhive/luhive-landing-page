@@ -37,6 +37,14 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    animation: fadeInPage 0.8s ease-in forwards;
+}
+
+@keyframes fadeInPage {
+    to {
+        opacity: 1;
+    }
 }
 
 .container {
@@ -55,6 +63,16 @@ body {
     backdrop-filter: blur(12px);
     z-index: 1000;
     transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideDown 0.6s ease-out 0.2s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .nav-content {
@@ -191,6 +209,16 @@ body {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-badge {
@@ -727,7 +755,7 @@ body {
     }
     
     .hero-title {
-        font-size: 40px;
+        font-size: 50px;
     }
     
     .hero-subtitle {
@@ -756,5 +784,15 @@ body {
     
     .features-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .demo-form-wide {
+        padding: 32px 20px;
+        max-width: 100%;
+    }
+    
+    .contact-content-centered {
+        margin-left: -24px;
+        margin-right: -24px;
     }
 }
