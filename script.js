@@ -11,27 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (demoForm) {
         demoForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const organization = document.getElementById('organization').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send this data to your backend
-            console.log('Demo Request:', {
-                name,
-                email,
-                organization,
-                message
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const organization = document.getElementById("organization").value;
+          const message = document.getElementById("message").value;
+
+          // Track form submission in Google Analytics
+          if (typeof gtag !== "undefined") {
+            gtag("event", "submit", {
+              event_category: "Form",
+              event_label: "Demo Request Form",
+              value: 1,
             });
-            
-            // Show success message
-            alert('Thank you for your interest! We\'ll be in touch soon.');
-            
-            // Reset form
-            demoForm.reset();
+          }
+
+          // Here you would typically send this data to your backend
+          console.log("Demo Request:", {
+            name,
+            email,
+            organization,
+            message,
+          });
+
+          // Show success message
+          alert("Thank you for your interest! We'll be in touch soon.");
+
+          // Reset form
+          demoForm.reset();
         });
     }
     
