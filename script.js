@@ -190,8 +190,14 @@ document.addEventListener("DOMContentLoaded", function () {
       // Disable submit button to prevent double submission
       const submitButton = demoForm.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
+      const originalStyle = submitButton.style.cssText;
+
       submitButton.disabled = true;
       submitButton.textContent = "Sending...";
+      submitButton.style.backgroundColor = "#9CA3AF";
+      submitButton.style.color = "#6B7280";
+      submitButton.style.cursor = "not-allowed";
+      submitButton.style.opacity = "0.7";
 
       try {
         // Make API call
@@ -247,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Re-enable submit button
         submitButton.disabled = false;
         submitButton.textContent = originalText;
+        submitButton.style.cssText = originalStyle;
       }
     });
   }
