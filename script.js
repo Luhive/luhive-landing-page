@@ -154,21 +154,21 @@ function showToast(message, type = 'info') {
 
 // Form submission handler
 document.addEventListener("DOMContentLoaded", function () {
-  const demoForm = document.getElementById("demoForm");
+  const waitlistForm = document.getElementById("waitlistForm");
 
-  if (demoForm) {
-    demoForm.addEventListener("submit", async function (e) {
+  if (waitlistForm) {
+    waitlistForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       // Get form values and validate
       const email = document.getElementById("email").value.trim();
-      const organization = document
+      const communityName = document
         .getElementById("communityName")
         .value.trim();
 
       // Basic validation
-      if (!name || !email || !organization) {
-        showToast("Please fill in all required fields.", "error");
+      if (!email) {
+        showToast("Please enter your email address.", "error");
         return;
       }
 
@@ -182,16 +182,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // Prepare payload
       const payload = {
         email: email,
-        communityName: organization,
+        communityName: communityName || "",
       };
 
       // Disable submit button to prevent double submission
-      const submitButton = demoForm.querySelector('button[type="submit"]');
+      const submitButton = waitlistForm.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
       const originalStyle = submitButton.style.cssText;
 
       submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
+      submitButton.textContent = "Joining...";
       submitButton.style.backgroundColor = "#9CA3AF";
       submitButton.style.color = "#6B7280";
       submitButton.style.cursor = "not-allowed";
@@ -215,36 +215,36 @@ document.addEventListener("DOMContentLoaded", function () {
           if (typeof gtag !== "undefined") {
             gtag("event", "submit", {
               event_category: "Form",
-              event_label: "Demo Request Form - Success",
+              event_label: "Waitlist Form - Success",
               value: 1,
             });
           }
 
           // Show success message
           showToast(
-            "Thank you for your interest! We'll be in touch soon.",
+            "Welcome to the waitlist! We'll notify you when Luhive launches.",
             "success"
           );
 
           // Reset form
-          demoForm.reset();
+          waitlistForm.reset();
         } else {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
       } catch (error) {
-        console.error("Error submitting demo request:", error);
+        console.error("Error joining waitlist:", error);
 
         // Track failed submission in Google Analytics
         if (typeof gtag !== "undefined") {
           gtag("event", "exception", {
-            description: "Demo form submission failed",
+            description: "Waitlist form submission failed",
             fatal: false,
           });
         }
 
         // Show error message
         showToast(
-          "Sorry, there was an error submitting your request. Please try again or contact us directly at hi@luhive.com",
+          "Sorry, there was an error joining the waitlist. Please try again or contact us directly at hi@luhive.com",
           "error"
         );
       } finally {
