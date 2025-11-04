@@ -686,10 +686,21 @@ body {
 .demo-form h3,
 .demo-form-wide h3 {
     font-size: 24px;
+    font-size: 24px;
     font-weight: 700;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     color: var(--text-primary);
-    text-align: center;
+    text-align: left;
+}
+
+.waitlist-description {
+    color: #6b7078;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    opacity: 0.8;
+    font-weight: 400;
+    text-align: left;
 }
 
 .form-group {

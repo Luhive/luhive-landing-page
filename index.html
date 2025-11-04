@@ -136,7 +136,7 @@
                     <a href="#about">About</a>
                     <a href="#features">Features</a>
                     <a href="#contact">Contact</a>
-                    <button class="btn-primary-sm" onclick="scrollToDemo(); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Request Demo - Header'});">Request a Demo</button>
+                    <button class="btn-primary-sm" onclick="window.open('https://app.luhive.com', '_blank'); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Try the Demo - Header'});">Try the Demo</button>
                 </div>
             </div>
         </div>
@@ -158,8 +158,8 @@
                     Luhive brings your community together in one powerful, unified platform.
                 </p>
                 <div class="hero-cta">
-                    <button class="btn-primary-large" onclick="scrollToDemo(); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Request Demo - Hero'});">Request a Demo</button>
-                    <a href="#about" class="btn-secondary-large" onclick="gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Learn More - Hero'});">Learn More →</a>
+                    <button class="btn-primary-large" onclick="window.open('https://app.luhive.com', '_blank'); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Try the Demo - Hero'});">Try the Demo</button>
+                    <button class="btn-secondary-large" onclick="scrollToDemo(); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Join Waitlist - Hero'});">Join Waitlist →</button>
                 </div>
                 <p class="hero-tagline">
                     <span class="tagline-highlight">Build communities that matter</span> 
@@ -320,8 +320,8 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Get in Touch</span>
-                <h2 class="section-title">Let's Build Together</h2>
+                <span class="section-badge">Join Our Community</span>
+                <h2 class="section-title">Be Part of the Future</h2>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
@@ -351,21 +351,16 @@
                     </div>
                 </div>
                 <div class="demo-form">
-                    <h3>Request a Demo</h3>
-                    <form id="demoForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                        </div>
+                    <h3>Get on the List</h3>
+                    <p class="waitlist-description">Luhive is invite-only during our testing phase. We'll reach out when we're ready.</p>
+                    <form id="waitlistForm">
                         <div class="form-group">
                             <input type="email" id="email" placeholder="Email Address" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="organization" placeholder="Organization/Community Name" required>
+                            <input type="text" id="communityName" placeholder="Community Name (Optional)">
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="Tell us about your community..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary-large full-width">Request Demo</button>
+                        <button type="submit" class="btn-primary-large full-width">Join Waitlist</button>
                     </form>
                 </div>
             </div>
@@ -389,7 +384,7 @@
                         <h4>Product</h4>
                         <a href="#features">Features</a>
                         <a href="#about">About</a>
-                        <a href="#contact">Request Demo</a>
+                        <a href="#contact">Join Waitlist</a>
                     </div>
                     <div class="footer-column">
                         <h4>Connect</h4>

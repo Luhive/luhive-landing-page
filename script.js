@@ -161,10 +161,10 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
 
       // Get form values and validate
-      const name = document.getElementById("name").value.trim();
       const email = document.getElementById("email").value.trim();
-      const organization = document.getElementById("organization").value.trim();
-      const message = document.getElementById("message").value.trim();
+      const organization = document
+        .getElementById("communityName")
+        .value.trim();
 
       // Basic validation
       if (!name || !email || !organization) {
@@ -181,10 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Prepare payload
       const payload = {
-        name: name,
         email: email,
         communityName: organization,
-        communityDescription: message || "Demo request",
       };
 
       // Disable submit button to prevent double submission
