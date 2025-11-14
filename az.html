@@ -131,28 +131,47 @@
                     <a href="#about">Haqqımızda</a>
                     <a href="#features">Xüsusiyyətlər</a>
                     <a href="#contact">Əlaqə</a>
-                    <!-- ADD THIS LINE -->
-                    
-                    <!-- END OF ADDED LINE -->
                     <button class="btn-primary-sm" onclick="window.open('https://app.luhive.com', '_blank'); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Try the Demo - Header'});">Demodan İstifadə Et</button>
-                 <div>
-                    <a style="display: flex; align-items: center;" href="index.html" style="font-weight: 600; margin: 0 8px;">
-                        <span style="margin-right: 0.4rem;"">AZ</span>
-                        <img width="20" height="20" src="./azerbaijan.png">
-                    </a>
+                    <div>
+                        <a style="display: flex; align-items: center;" href="index.html" style="font-weight: 600; margin: 0 8px;">
+                            <span style="margin-right: 0.4rem;">AZ</span>
+                            <img width="20" height="20" src="./azerbaijan.png">
+                        </a>
+                    </div>
                 </div>
-                </div>
+                <button class="hamburger" aria-label="Menyunu aç/bağla">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#about">Haqqımızda</a>
+            <a href="#features">Xüsusiyyətlər</a>
+            <a href="#contact">Əlaqə</a>
+        </div>
+        <div class="mobile-menu-cta">
+            <button class="btn-primary-large" onclick="window.open('https://app.luhive.com', '_blank'); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Try the Demo - Mobile'});">Demodan İstifadə Et</button>
+        </div>
+        <div class="mobile-menu-lang">
+            <a href="index.html">
+                <span>AZ</span>
+                <img width="20" height="20" src="./azerbaijan.png" alt="Azərbaycan">
+            </a>
+        </div>
+    </div>
+
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i data-lucide="rocket" class="badge-icon"></i>
-                    <span>Tezliklə</span>
-                </div>
                 <h1 class="hero-title">
                     Vahid Platforma.<br>
                     <span class="gradient-text">Aktiv İcmalar.</span>

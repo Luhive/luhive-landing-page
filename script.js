@@ -256,6 +256,64 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Hamburger Menu Toggle
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
+  const mobileMenuLinks = document.querySelectorAll(".mobile-menu-links a");
+
+  function toggleMobileMenu() {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    mobileMenuOverlay.classList.toggle("active");
+    document.body.style.overflow = mobileMenu.classList.contains("active") ? "hidden" : "";
+  }
+
+  function closeMobileMenu() {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    mobileMenuOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener("click", toggleMobileMenu);
+  }
+
+  if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+  }
+
+  // Close menu when clicking on a link
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+
+  // Close menu when clicking CTA button
+  const mobileMenuCTA = document.querySelector(".mobile-menu-cta button");
+  if (mobileMenuCTA) {
+    mobileMenuCTA.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  }
+
+  // Close menu when clicking language switcher
+  const mobileMenuLang = document.querySelector(".mobile-menu-lang a");
+  if (mobileMenuLang) {
+    mobileMenuLang.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  }
+
+  // Close menu on escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileMenu.classList.contains("active")) {
+      closeMobileMenu();
+    }
+  });
+
   // Navbar scroll effect
   const navbar = document.querySelector(".navbar");
   let lastScroll = 0;

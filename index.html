@@ -137,28 +137,48 @@
                     <a href="#about">About</a>
                     <a href="#features">Features</a>
                     <a href="#contact">Contact</a>
-                    <!-- ADD THIS LINE -->
-                    <!-- END OF ADDED LINE -->
                     <button class="btn-primary-sm" onclick="window.open('https://app.luhive.com', '_blank'); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Try the Demo - Header'});">Try the Demo</button>
-                    <div >
-                    <a style="display: flex; align-items: center;" href="az.html" style="font-weight: 600; margin: 0 8px;">
-                        <span style="margin-right: 0.4rem;"">EN</span>
-                        <img width="20" height="20" src="./united-kingdom.png">
-                    </a>
+                    <div>
+                        <a style="display: flex; align-items: center;" href="az.html" style="font-weight: 600; margin: 0 8px;">
+                            <span style="margin-right: 0.4rem;">EN</span>
+                            <img width="20" height="20" src="./united-kingdom.png">
+                        </a>
                     </div>
                 </div>
+                <button class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-links">
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="mobile-menu-cta">
+            <button class="btn-primary-large" onclick="window.open('https://app.luhive.com', '_blank'); gtag('event', 'click', {'event_category': 'CTA', 'event_label': 'Try the Demo - Mobile'});">Try the Demo</button>
+        </div>
+        <div class="mobile-menu-lang">
+            <a href="az.html">
+                <span>EN</span>
+                <img width="20" height="20" src="./united-kingdom.png" alt="English">
+            </a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i data-lucide="rocket" class="badge-icon"></i>
-                    <span>Coming Soon</span>
-                </div>
                 <h1 class="hero-title">
                     One Platform.<br>
                     <span class="gradient-text">Engaged Communities.</span>
