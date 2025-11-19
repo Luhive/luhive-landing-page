@@ -1,0 +1,7 @@
+User-Agent: *
+Content-signal: search=yes,ai-train=no
+Allow: /
+
+
+# Point to the Sitemap Index we created in the previous step
+Sitemap: https://luhive.com/sitemap.xml
