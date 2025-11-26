@@ -1,10 +1,3 @@
-// Smooth scroll to demo section
-function scrollToDemo() {
-    document.getElementById('contact').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-}
-
 // Toast notification system
 function showToast(message, type = 'info') {
     // Remove any existing toast
@@ -152,110 +145,8 @@ function showToast(message, type = 'info') {
     }, 5000);
 }
 
-// Form submission handler
+// DOM Content Loaded Handler
 document.addEventListener("DOMContentLoaded", function () {
-  const waitlistForm = document.getElementById("waitlistForm");
-
-  if (waitlistForm) {
-    waitlistForm.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      // Get form values and validate
-      const email = document.getElementById("email").value.trim();
-      const communityName = document
-        .getElementById("communityName")
-        .value.trim();
-
-      // Basic validation
-      if (!email) {
-        showToast("Please enter your email address.", "error");
-        return;
-      }
-
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        showToast("Please enter a valid email address.", "error");
-        return;
-      }
-
-      // Prepare payload
-      const payload = {
-        email: email,
-        communityName: communityName || "",
-      };
-
-      // Disable submit button to prevent double submission
-      const submitButton = waitlistForm.querySelector('button[type="submit"]');
-      const originalText = submitButton.textContent;
-      const originalStyle = submitButton.style.cssText;
-
-      submitButton.disabled = true;
-      submitButton.textContent = "Joining...";
-      submitButton.style.backgroundColor = "#9CA3AF";
-      submitButton.style.color = "#6B7280";
-      submitButton.style.cursor = "not-allowed";
-      submitButton.style.opacity = "0.7";
-
-      try {
-        // Make API call
-        const response = await fetch(
-          "https://request-demo-endpoint.luhive.workers.dev",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          }
-        );
-
-        if (response.ok) {
-          // Track successful submission in Google Analytics
-          if (typeof gtag !== "undefined") {
-            gtag("event", "submit", {
-              event_category: "Form",
-              event_label: "Waitlist Form - Success",
-              value: 1,
-            });
-          }
-
-          // Show success message
-          showToast(
-            "Welcome to the waitlist! We'll notify you when Luhive launches.",
-            "success"
-          );
-
-          // Reset form
-          waitlistForm.reset();
-        } else {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-      } catch (error) {
-        console.error("Error joining waitlist:", error);
-
-        // Track failed submission in Google Analytics
-        if (typeof gtag !== "undefined") {
-          gtag("event", "exception", {
-            description: "Waitlist form submission failed",
-            fatal: false,
-          });
-        }
-
-        // Show error message
-        showToast(
-          "Sorry, there was an error joining the waitlist. Please try again or contact us directly at hi@luhive.com",
-          "error"
-        );
-      } finally {
-        // Re-enable submit button
-        submitButton.disabled = false;
-        submitButton.textContent = originalText;
-        submitButton.style.cssText = originalStyle;
-      }
-    });
-  }
-
   // Hamburger Menu Toggle
   const hamburger = document.querySelector(".hamburger");
   const mobileMenu = document.querySelector(".mobile-menu");

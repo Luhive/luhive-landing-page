@@ -346,6 +346,12 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+.btn-primary:focus,
+.btn-primary-sm:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 .btn-primary-large {
     background-color: var(--primary);
     color: white;
@@ -371,13 +377,18 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.btn-primary-large:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
 .btn-secondary-large {
-    color: var(--text-primary);
+    color: var(--primary);
     height: var(--btn-height);
     min-width: var(--btn-min-width);
     padding: 0 32px;
     border-radius: var(--btn-radius);
-    border: 2px solid var(--border);
+    border: 2px solid var(--primary);
     background: white;
     font-weight: 600;
     font-size: 16px;
@@ -390,9 +401,15 @@ body {
 }
 
 .btn-secondary-large:hover {
-    border-color: var(--primary);
+    border-color: var(--primary-dark);
     color: var(--primary);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary-large:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 .full-width {
@@ -494,7 +511,33 @@ body {
     display: flex;
     gap: 16px;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
+}
+
+.hero-microcopy {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.microcopy-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.microcopy-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.microcopy-link:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .hero-tagline {
